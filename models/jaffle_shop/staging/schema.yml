@@ -1,0 +1,44 @@
+version: 2
+
+sources:
+  - name: retail_data
+    description: "Catalog containing retail data"
+    schema: sales_data
+    tables:
+      - name: customers
+        description: "Raw customers table in the sales_data schema"
+      - name: orders
+        description: "Raw orders table in the sales_data schema"
+      - name: payments
+        description: "Raw payments table in the sales_data schema"
+
+models:
+  - name: stg_customers
+    description: "Staging model for customers"
+    columns:
+      - name: customer_id
+        description: "Unique identifier for the customer"
+      - name: first_name
+        description: "Customer's first name"
+      - name: last_name
+        description: "Customer's last name"
+
+  - name: stg_orders
+    description: "Staging model for orders"
+    columns:
+      - name: order_id
+        description: "Unique identifier for the order"
+      - name: customer_id
+        description: "Foreign key to the customers table"
+      - name: order_date
+        description: "Date when the order was placed"
+
+  - name: stg_payments
+    description: "Staging model for payments"
+    columns:
+      - name: order_id
+        description: "Foreign key to the orders table"
+      - name: payment_method
+        description: "Payment method used"
+      - name: amount
+        description: "Payment amount"
