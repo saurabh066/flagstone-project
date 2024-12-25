@@ -10,3 +10,8 @@ Install-Module -Name Az -AllowClobber -Force
 
 
 Set-PSRepository -Name 'PSGallery' -InstallationPolicy Trusted
+
+
+
+pip install keyring
+pip install keyrings.alt
