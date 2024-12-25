@@ -1,0 +1,12 @@
+databricks:
+  target: dev
+  outputs:
+    dev:
+      catalog: shop_data
+      host: "adb-2822429466874508.8.azuredatabricks.net"
+      http_path: "/sql/1.0/warehouses/cb126c8f6c99e71d"
+      schema: sales_data
+      threads: 1
+      type: databricks
+      auth_type: oauth
+      client_id: "28b68762-0c43-4c8a-a20a-8900930640dd"
